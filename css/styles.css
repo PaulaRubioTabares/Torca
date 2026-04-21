@@ -66,7 +66,7 @@ img {
     padding: 2rem 0;
     text-transform: uppercase;
     font-size: clamp(1.5rem, 25%, 2rem);
-    margin: clamp(1.2rem, 15wv , 1.5rem);
+    margin:clamp(0.4rem, 15vw, 1.5rem);
     margin-top: 0;
 }
 
@@ -86,7 +86,7 @@ img {
 /* header 2 */
 .header__2 {
     display: flex;
-    height: 91vh; /* Este height acá para que el align item surta efecto */
+    height: clamp(80vh, 91vh, 95vh); /* Este height acá para que el align item surta efecto */
     justify-content: center;
     align-items: center;
 }
@@ -220,6 +220,7 @@ img {
         flex-direction: column;
         align-items: center;
     }
+
 }
 
 
@@ -241,6 +242,10 @@ img {
 @media all and (max-width:520px) {
     .header__item {
         height: auto;
+    }
+    .header__2{
+    height: clamp(60vh, 65vh, 70vh); /* Este height acá para que el align item surta efecto */
+
     }
     .article__container{
         display: block;
