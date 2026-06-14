@@ -18,7 +18,7 @@ a {
 
 img {
     width: 100%;
-
+    height: 100%;
 }
 
 /* header */
@@ -66,7 +66,7 @@ img {
     padding: 2rem 0;
     text-transform: uppercase;
     font-size: clamp(1.5rem, 25%, 2rem);
-    margin:clamp(0.4rem, 15vw, 1.5rem);
+    margin: clamp(1.2rem, 15vw, 1.5rem);
     margin-top: 0;
 }
 
@@ -79,40 +79,41 @@ img {
 .red__social {
     padding: 0 1rem;
 }
-.logo{
+.logo {
     font-size: clamp(2.2rem, 3vw, 5rem);
 }
 
 /* header 2 */
-.header__2 {
+.header__item {
     display: flex;
-    height: clamp(80vh, 91vh, 95vh); /* Este height acá para que el align item surta efecto */
-    justify-content: center;
     align-items: center;
-}
-.header__2 {
+    justify-content: center;
+    height: 90vh;
     text-align: center;
     text-transform: capitalize;
     font-size: clamp(2rem, 3vw, 3rem);
-    text-shadow: 0.5rem 0.5rem 1rem #000, -0.5rem -0.5rem 1rem #000;
+    text-shadow:
+        0.5rem 0.5rem 1rem #000,
+        -0.5rem -0.5rem 1rem #000;
 }
-
 
 /* full page */
 /* section */
 .section__container {
-    display: flex;
-    flex: 2 1 auto;
+    display: grid;
+    grid-template:
+        "a a b" auto
+        "c c b" 35px/
+        1.5fr 1.5fr 1fr;
     position: relative;
     padding: 0 4rem;
 }
 
-
 /* article on section */
 .article__container {
-    display: flex;
-    flex: 1 1 auto;
-    flex-flow: row wrap;
+    grid-area: a;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min(100%, 30rem), 1fr));
     background-color: #eeecec;
     gap: 1.5rem;
     margin-right: 1rem;
@@ -120,9 +121,8 @@ img {
 
 .item__article {
     background-color: #d6d6d6;
-    flex: 1 1 40%;
 }
-.h2__article{
+.h2__article {
     font-size: clamp(1.3rem, 2rem, 2.5rem);
 }
 
@@ -163,8 +163,9 @@ img {
 
 /* inicio 1 2 ... Fin */
 .article_nav {
-    flex: 1 1 100%;
+    grid-area: c;
     margin-top: 0.5rem;
+    margin-right: 1rem;
     padding: 0.5rem;
     text-transform: uppercase;
     background-color: #000;
@@ -178,10 +179,10 @@ img {
 /* aside on section */
 
 .aside__container {
+    grid-area: b;
     position: sticky;
     top: 1.5rem;
 }
-
 
 /* Position sticky */
 .aside__sticky {
@@ -197,7 +198,6 @@ img {
     background-color: #aaa;
 }
 
-
 /* footer */
 .footer {
     margin-top: 1rem;
@@ -212,42 +212,30 @@ img {
     color: #fff;
 }
 
-
-
 /* de 0 a 1150px cambios en header*/
-@media all and (max-width:1150px) {
+@media all and (max-width: 1150px) {
     .menu {
         flex-direction: column;
         align-items: center;
     }
-
 }
 
-
 /* de 0 a 920 px cambios en header y section (article y aside) */
-@media all and (max-width:920px) {
+@media all and (max-width: 920px) {
     .menu__nav_span {
         display: none;
     }
     .section__container {
         display: block;
     }
-    .aside__container{
-        margin:clamp(1rem, 2rem, 3rem);
+    .aside__container {
+        margin: clamp(1rem, 2rem, 3rem);
     }
 }
 
-
 /* de 0 a 520 px*/
-@media all and (max-width:520px) {
+@media all and (max-width: 520px) {
     .header__item {
         height: auto;
-    }
-    .header__2{
-    height: clamp(60vh, 65vh, 70vh); /* Este height acá para que el align item surta efecto */
-
-    }
-    .article__container{
-        display: block;
     }
 }
