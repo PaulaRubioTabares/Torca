@@ -113,7 +113,7 @@ img {
 .article__container {
     grid-area: a;
     display: grid;
-    grid-template-columns: repeat(2, minmax(min(100%, 30rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
     background-color: #eeecec;
     gap: 1.5rem;
     margin-right: 1rem;
